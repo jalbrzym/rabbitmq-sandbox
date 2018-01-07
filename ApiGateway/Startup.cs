@@ -21,7 +21,6 @@ namespace ApiGateway
                     options.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
                 });
 
-
             var bus = Bus.Factory.CreateUsingRabbitMq(sbc =>
             {
                 var host = sbc.Host(new Uri("rabbitmq://localhost"), h =>
@@ -29,7 +28,6 @@ namespace ApiGateway
                     h.Username("guest");
                     h.Password("guest");
                 });
-
             });
 
             services.AddSingleton<IBus>(bus);
@@ -45,6 +43,11 @@ namespace ApiGateway
             }
 
             app.UseMvc();
+
+            app.ApplicationServices
+                .GetRequiredService<IApplicationLifetime>()
+                .ApplicationStopping
+                .Register(OnShutdown);
         }
 
         private void OnShutdown()

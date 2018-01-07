@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27130.2010
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Messages", "Messages\Messages.csproj", "{2BE0910F-8EE0-472A-BEA8-1C12976C09A1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Messages", "Messages\Messages.csproj", "{2BE0910F-8EE0-472A-BEA8-1C12976C09A1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InvoiceProcessorService", "InvoiceProcessorService\InvoiceProcessorService.csproj", "{FBC1BF19-7780-4191-9671-1426AC425654}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InvoiceProcessingService", "InvoiceProcessingService\InvoiceProcessingService.csproj", "{FBC1BF19-7780-4191-9671-1426AC425654}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InvoiceSenderService", "InvoiceSenderService\InvoiceSenderService.csproj", "{CFC45F09-F40D-4E7D-8C29-C9D1F3867A46}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InvoiceSendingService", "InvoiceSendingService\InvoiceSendingService.csproj", "{CFC45F09-F40D-4E7D-8C29-C9D1F3867A46}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiGateway", "ApiGateway\ApiGateway.csproj", "{6B191D72-9954-4D1D-9FDD-24CB2642D8E4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApiGateway", "ApiGateway\ApiGateway.csproj", "{6B191D72-9954-4D1D-9FDD-24CB2642D8E4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

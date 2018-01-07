@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <PackageReference Include="MassTransit.RabbitMQ" Version="4.0.0" />
+    <PackageReference Include="Topshelf" Version="4.0.3" />
   </ItemGroup>
 
 </Project>

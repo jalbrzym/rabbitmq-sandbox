@@ -1,9 +1,9 @@
 ﻿using System;
 using MassTransit;
 
-namespace InvoiceProcessingService
+namespace InvoiceSendingService
 {
-    internal class InvoiceProcessingService
+    internal class InvoiceSendingService
     {
         private IBusControl _bus;
 
@@ -17,9 +17,9 @@ namespace InvoiceProcessingService
                     h.Password("guest");
                 });
 
-                sbc.ReceiveEndpoint(host, "poc.invoices", cfg =>
+                host.ConnectReceiveEndpoint("poc.invoices", cfg =>
                 {
-                    cfg.Consumer<CreateInvoiceConsumer>();
+                    cfg.Consumer<SendInvoiceConsumer>();
                 });
             });
         }

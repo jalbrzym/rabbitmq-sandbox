@@ -1,4 +1,5 @@
-﻿using MassTransit;
+﻿using System.Threading.Tasks;
+using MassTransit;
 using Messages;
 using Messages.DTO;
 using Microsoft.AspNetCore.Mvc;
@@ -16,9 +17,9 @@ namespace ApiGateway.Controllers
         }
 
         [HttpPost]
-        public IActionResult CreateInvoice(Invoice invoice)
+        public async Task<IActionResult> CreateInvoice(Invoice invoice)
         {
-            _bus.Publish(new CreateInvoice
+            await _bus.Publish(new CreateInvoice
             {
                 Invoice = invoice
             });

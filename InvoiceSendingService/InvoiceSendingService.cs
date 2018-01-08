@@ -1,5 +1,6 @@
 ﻿using System;
 using MassTransit;
+using MassTransit.Util;
 
 namespace InvoiceSendingService
 {
@@ -22,6 +23,8 @@ namespace InvoiceSendingService
                     cfg.Consumer<SendInvoiceConsumer>();
                 });
             });
+
+            TaskUtil.Await(() => _bus.StartAsync());
         }
 
         public void Stop()

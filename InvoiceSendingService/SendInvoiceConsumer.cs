@@ -5,9 +5,9 @@ using Messages;
 
 namespace InvoiceSendingService
 {
-    public class SendInvoiceConsumer : IConsumer<SendInvoice>
+    public class SendInvoiceConsumer : IConsumer<ISendInvoice>
     {
-        public Task Consume(ConsumeContext<SendInvoice> context)
+        public Task Consume(ConsumeContext<ISendInvoice> context)
         {
             // fetch invoice & send
 

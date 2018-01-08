@@ -7,9 +7,9 @@ using Messages.DTO;
 
 namespace InvoiceProcessingService
 {
-    public class CreateInvoiceConsumer : IConsumer<CreateInvoice>
+    public class CreateInvoiceConsumer : IConsumer<ICreateInvoice>
     {
-        public async Task Consume(ConsumeContext<CreateInvoice> context)
+        public async Task Consume(ConsumeContext<ICreateInvoice> context)
         {
             var invoice = context.Message.Invoice;
 

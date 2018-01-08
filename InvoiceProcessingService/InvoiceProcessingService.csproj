@@ -84,6 +84,10 @@
       <Project>{0ed6fd57-337d-4c8f-beb3-4adf7ac6c98a}</Project>
       <Name>Messages</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Shared\Shared.csproj">
+      <Project>{15906cff-c9de-4b45-9adf-c971eeb5381d}</Project>
+      <Name>Shared</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

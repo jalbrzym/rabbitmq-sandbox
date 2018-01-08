@@ -1,6 +1,7 @@
 ﻿using System;
 using MassTransit;
 using MassTransit.Util;
+using Shared;
 
 namespace InvoiceProcessingService
 {
@@ -12,13 +13,13 @@ namespace InvoiceProcessingService
         {
             _bus = Bus.Factory.CreateUsingRabbitMq(sbc =>
             {
-                var host = sbc.Host(new Uri("rabbitmq://localhost"), h =>
+                var host = sbc.Host(new Uri(RabbitMqConfig.HostAddress), h =>
                 {
-                    h.Username("guest");
-                    h.Password("guest");
+                    h.Username(RabbitMqConfig.Username);
+                    h.Password(RabbitMqConfig.Password);
                 });
 
-                sbc.ReceiveEndpoint(host, "poc.invoices", cfg =>
+                sbc.ReceiveEndpoint(host, RabbitMqConfig.Queues.Invoices, cfg =>
                 {
                     cfg.Consumer<CreateInvoiceConsumer>();
                 });

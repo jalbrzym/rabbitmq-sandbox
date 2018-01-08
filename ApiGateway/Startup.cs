@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 using Newtonsoft.Json.Serialization;
+using Shared;
 
 namespace ApiGateway
 {
@@ -23,10 +24,10 @@ namespace ApiGateway
 
             var bus = Bus.Factory.CreateUsingRabbitMq(sbc =>
             {
-                var host = sbc.Host(new Uri("rabbitmq://localhost"), h =>
+                sbc.Host(new Uri(RabbitMqConfig.HostAddress), h =>
                 {
-                    h.Username("guest");
-                    h.Password("guest");
+                    h.Username(RabbitMqConfig.Username);
+                    h.Password(RabbitMqConfig.Password);
                 });
             });
 

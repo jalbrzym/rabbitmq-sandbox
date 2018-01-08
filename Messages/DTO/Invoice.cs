@@ -12,6 +12,5 @@ namespace Messages.DTO
         public string VatId { get; set; }
 
         public IList<InvoiceLineItem> LineItems { get; set; }
-
     }
 }

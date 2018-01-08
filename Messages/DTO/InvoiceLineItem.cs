@@ -3,7 +3,6 @@
     public class InvoiceLineItem
     {
         public string Description { get; set; }
-        public decimal Amount { get; set; }
         public decimal Quantity { get; set; }
         public decimal NetValue { get; set; }
         public decimal GrossValue { get; set; }

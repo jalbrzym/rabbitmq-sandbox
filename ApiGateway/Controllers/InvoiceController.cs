@@ -1,4 +1,5 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.Threading.Tasks;
 using MassTransit;
 using Messages;
 using Messages.DTO;
@@ -17,7 +18,7 @@ namespace ApiGateway.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> CreateInvoice(Invoice invoice)
+        public async Task<IActionResult> CreateInvoice([FromBody]Invoice invoice)
         {
             await _bus.Publish(new CreateInvoice
             {

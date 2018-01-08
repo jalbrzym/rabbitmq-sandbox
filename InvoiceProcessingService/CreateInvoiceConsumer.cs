@@ -37,7 +37,7 @@ namespace InvoiceProcessingService
             sb.AppendLine("--------------------------------");
             sb.AppendLine($"CompanyName:\t{invoice.CompanyName}");
             sb.AppendLine($"CompanyAddress:\t{invoice.CompanyAddress}");
-            sb.AppendLine($"VatId:\t{invoice.VatId}");
+            sb.AppendLine($"VatId:\t\t{invoice.VatId}");
             sb.AppendLine($"IssueDate:\t{invoice.IssueDate}");
             sb.AppendLine("LineItems:");
 
@@ -47,7 +47,6 @@ namespace InvoiceProcessingService
                 {
                     sb.AppendLine($"\tDescription:\t{lineItem.Description}");
                     sb.AppendLine($"\tQuantity:\t{lineItem.Quantity}");
-                    sb.AppendLine($"\tAmount:\t{lineItem.Amount}");
                     sb.AppendLine($"\tNetValue:\t{lineItem.NetValue}");
                     sb.AppendLine($"\tGrossValue:\t{lineItem.GrossValue}");
                     sb.AppendLine($"\tTaxRate:\t{lineItem.TaxRate}");

@@ -7,6 +7,11 @@ namespace InvoiceSendingService
 {
     public class SendInvoiceConsumer : IConsumer<ISendInvoice>
     {
+        public SendInvoiceConsumer(IService service)
+        {
+            
+        }
+
         public Task Consume(ConsumeContext<ISendInvoice> context)
         {
             // fetch invoice & send

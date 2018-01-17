@@ -1,17 +1,22 @@
 ﻿using System;
+using Autofac;
 using Topshelf;
 
 namespace InvoiceSendingService
 {
     public class Program
     {
+        public static IContainer Container { get; private set; }
+
         public static void Main(string[] args)
         {
+            Container = AutofacInitializer.Initialize();
+
             var rc = HostFactory.Run(x =>
             {
                 x.Service<InvoiceSendingService>(svc =>
                 {
-                    svc.ConstructUsing(name => new InvoiceSendingService()); 
+                    svc.ConstructUsing(name => Container.Resolve<InvoiceSendingService>()); 
                     svc.WhenStarted(s => s.Start());
                     svc.WhenStopped(s => s.Stop());
                 });
